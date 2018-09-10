@@ -1,6 +1,9 @@
 
 alert("Welcome to the Control Flow Lab, let's go to the fruit and veg shop!");
 
+var name = prompt("What is your name?");
+var age = prompt("How old are you?")
+
 var type = prompt("Would you like to buy two pieces of 'fruit' or 'veg'?");
 
 var grapes = 2.99;
@@ -13,6 +16,13 @@ var peas = 3;
 var carrots = 2.99;
 var sumTotal = parseFloat("0.00");
 var breakVariable = 0;
+var boolean = false;
+var user = {
+  name: name,
+  age: age,
+}
+
+console.log(user);
 
 var fruitarray = ['grapes', ' apples', ' bananas or pears']
 var vegarray = ['cucumber', ' sweetcorn', ' peas or carrots']
@@ -141,7 +151,7 @@ while (breakVariable < 2) {
 }
 
 if (breakVariable >= 2) {
-  var finalanswer = prompt(`Thank you! You owe £${sumTotal}. Is this okay? (y/n)`);
+  var finalanswer = prompt(`Thank you ${name}! You owe £${sumTotal}. Is this okay? (y/n)`);
     if (finalanswer === 'y') {
       alert('Please send your money to givememoney@cash.com!');
     } else if (finalanswer === 'n') {

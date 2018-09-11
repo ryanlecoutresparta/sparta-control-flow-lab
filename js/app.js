@@ -1,34 +1,24 @@
 
 alert("Welcome to the Control Flow Lab, let's go to the fruit and veg shop!");
 
-var name = prompt("What is your name?");
-var age = prompt("How old are you?")
+var username = prompt("What is your name?");
+var userage = prompt("How old are you?")
 
 var type = prompt("Would you like to buy two pieces of 'fruit' or 'veg'?");
 
-var grapes = 2.99;
+var grapes = 2.50;
 var apples = 1;
 var bananas = 3;
-var pears = 2.99;
+var pears = 2.50;
 var cucumber = 2;
-var sweetcorn = 1.99;
+var sweetcorn = 1.50;
 var peas = 3;
-var carrots = 2.99;
-var sumTotal = parseFloat("0.00");
+var carrots = 2.50;
+var sumTotal = 0.00;
 var breakVariable = 0;
 var boolean = false;
-var user = {
-  name: name,
-  age: age,
-}
-
-console.log(user);
-
 var fruitarray = ['grapes', ' apples', ' bananas or pears']
 var vegarray = ['cucumber', ' sweetcorn', ' peas or carrots']
-
-
-
 
 while (breakVariable < 2) {
 
@@ -36,7 +26,7 @@ while (breakVariable < 2) {
     var fruit = prompt(`What's the first piece of fruit you'd like: ${fruitarray}?`);
     switch (fruit) {
       case 'grapes':
-      var type2 = alert("Grapes are £2.99.");
+      var type2 = alert("Grapes are £2.50.");
       var sumTotal =+ sumTotal + grapes;
       breakVariable ++
       break;
@@ -51,7 +41,7 @@ while (breakVariable < 2) {
       breakVariable ++
       break;
       case 'pears':
-      var type2 = alert("Pears are £2.99.");
+      var type2 = alert("Pears are £2.50.");
       var sumTotal =+ sumTotal + pears;
       breakVariable ++
       break;
@@ -64,7 +54,7 @@ while (breakVariable < 2) {
     var fruit = prompt(`What's the second piece of fruit you'd like: ${fruitarray}?`);
     switch (fruit) {
       case 'grapes':
-      var type2 = alert("Grapes are £2.99.");
+      var type2 = alert("Grapes are £2.50.");
       var sumTotal =+ sumTotal + grapes;
       breakVariable ++
       break;
@@ -79,7 +69,7 @@ while (breakVariable < 2) {
       breakVariable ++
       break;
       case 'pears':
-      var type2 = alert("Pears are £2.99.");
+      var type2 = alert("Pears are £2.50.");
       var sumTotal =+ sumTotal + pears;
       breakVariable ++
       break;
@@ -97,7 +87,7 @@ while (breakVariable < 2) {
       breakVariable ++
       break;
       case 'sweetcorn':
-      var type2 = alert("Sweetcorn is £1.99.");
+      var type2 = alert("Sweetcorn is £1.50.");
       var sumTotal =+ sumTotal + sweetcorn;
       breakVariable ++
       break;
@@ -107,7 +97,7 @@ while (breakVariable < 2) {
       breakVariable ++
       break;
       case 'carrots':
-      var type2 = alert("Carrots are £2.99.");
+      var type2 = alert("Carrots are £2.50.");
       var sumTotal =+ sumTotal + carrots;
       breakVariable ++
       break;
@@ -125,7 +115,7 @@ while (breakVariable < 2) {
       breakVariable ++
       break;
       case 'sweetcorn':
-      var type2 = alert("Sweetcorn is £1.99.");
+      var type2 = alert("Sweetcorn is £1.50.");
       var sumTotal =+ sumTotal + sweetcorn;
       breakVariable ++
       break;
@@ -135,7 +125,7 @@ while (breakVariable < 2) {
       breakVariable ++
       break;
       case 'carrots':
-      var type2 = alert("Carrots are £2.99.");
+      var type2 = alert("Carrots are £2.50.");
       var sumTotal =+ sumTotal + carrots;
       breakVariable ++
       break;
@@ -150,15 +140,23 @@ while (breakVariable < 2) {
   }
 }
 
+
+var user = {
+  name: username,
+  age: userage,
+  payment: sumTotal.toFixed(2)
+}
+
 if (breakVariable >= 2) {
-  var finalanswer = prompt(`Thank you ${name}! You owe £${sumTotal}. Is this okay? (y/n)`);
-    if (finalanswer === 'y') {
-      alert('Please send your money to givememoney@cash.com!');
-    } else if (finalanswer === 'n') {
-      alert("That's a shame.");
-      location.reload();
-    } else {
-      alert("Try putting a valid answer... Let's start again.");
-      location.reload();
-    }
+  var finalanswer = prompt(`Thank you ${name}! You owe £${sumTotal.toFixed(2)}. Is this okay? (y/n)`);
+  if (finalanswer === 'y') {
+    alert('Please send your money to givememoney@cash.com!');
+    console.log(user);
+  } else if (finalanswer === 'n') {
+    alert("That's a shame.");
+    location.reload();
+  } else {
+    alert("Try putting a valid answer... Let's start again.");
+    location.reload();
+  }
 }
